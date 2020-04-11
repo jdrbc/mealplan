@@ -1,11 +1,20 @@
-from PIL import Image
-import pytesseract
-import argparse
 import click
 import re
 import os.path
+from dataclasses import dataclass
+from jinja2 import Environment, PackageLoader
 
-def write_recipe(recipe, title):
+
+@dataclass
+class Recipe:
+    title: str = ''
+    source: str = ''
+    servings: str = ''
+    time: str = ''
+    ingredients: str = ''
+    directions: str = ''
+
+def get_filepath(title):
     filename = title.replace(' ', '_').lower() + '.md'
     filepath = f'recipes/{filename}'
     if os.path.isfile(filepath) and not click.confirm(f'overwrite {filepath}'):
@@ -13,37 +22,37 @@ def write_recipe(recipe, title):
         while os.path.isfile(filepath):
             filename = f'{title}_{i}.md'
             filepath = f'recipes/{filename}'
-    f = open(filepath, 'w')
-    f.write(recipe)
     return filepath
 
-def format_recipe(recipe, image_filename, title):
-    """Add title, image, and sub headings"""
-    # relative to the recipes folder
-    image_path = image_filename.replace('recipes', '.')
-    header = f'# {title}\n[source]({image_path})\n'
-    recipe = re.sub(r'^\s*ingredients\s*$', '## Ingredients', recipe, count=1, flags=re.IGNORECASE|re.MULTILINE)
-    recipe = re.sub(r'^\s*((instructions)|(directions))\s*$', '## Directions',
-                    recipe, count=1, flags=re.IGNORECASE | re.MULTILINE)
-    return header + recipe
+def build_recipe(recipe):
+    env = Environment(
+        loader=PackageLoader('mealplan', 'templates')
+    )
+    template = env.get_template('recipe_template.md')
+    return template.render(recipe=recipe)
 
-def read_title(recipe):
-    for line in recipe.splitlines():
-        if line.isspace():
-            continue
-        else:
-            return click.prompt('enter title: ', default=line)
+def import_recipe():
+    recipe = Recipe()
+    # get name
+    recipe.title = click.prompt('Enter name')
+    # get source
+    recipe.source = click.prompt('Enter source')
+    # get prep time
+    recipe.time = click.prompt('Enter prep time')
+    # get num servings
+    recipe.servings = click.prompt('Enter num servings')
+    MARKER = '# Enter ingredients above \n'
+    recipe.ingredients = click.edit(
+        '\n\n' + MARKER).split(MARKER, 1)[0].rstrip('\n')
+    # get directions
+    MARKER = '# Enter directions above \n'
+    recipe.directions = click.edit(
+        '\n\n' + MARKER).split(MARKER, 1)[0].rstrip('\n')
 
-@click.command()
-@click.argument('image_filename', type=click.Path(exists=True))
-def import_recipe(image_filename):
-    recipe = pytesseract.image_to_string(Image.open(image_filename))
-    title = read_title(recipe)
-    recipe = format_recipe(recipe, image_filename, title)
-    filename = write_recipe(recipe, title)
-    click.edit(filename=filename)
+    recipetext = build_recipe(recipe)
+    filepath = get_filepath(recipe.title)
+    open(filepath, 'w').write(recipetext)
+    click.edit(filename=filepath)
 
 if __name__ == '__main__':
     import_recipe()
-
-

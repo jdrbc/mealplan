@@ -3,7 +3,9 @@
 [image](./images/panfried_falafel_bowl.jpg)
 
 > source: page 94 of build a bowl
+
 > 50 minutes
+
 > serves 4
 
 # Ingredients

@@ -43,7 +43,7 @@ def read_meal(file_name):
                 mode = 'read_ingredient'
                 logger.debug(f'found ingredients section at line {num}')
         elif mode == 'read_ingredient':
-            match = re.search('\s*-\s*(.*)', line)
+            match = re.search('\s*-?\s*(.*)', line)
             if match is not None:
                 ingredients.append(match.group(1))
             else:
@@ -154,23 +154,3 @@ def build_plan():
 
 if __name__ == '__main__':
     build_plan()
-
-# pick some meals (allow replacement)
-# print suggested plan  
-
-# print a grocery list
-# for each meal in list collect ingredients into set
-# print set to a md file
-
-# create links to meals
-# print md file with links to recipes
-
-# pick N meals randomly from database
-# get count of recipes from recipe folder R
-# generate N random numbers between 1 & R
-# add recipes at pos N to meal list
-# return meal list
-
-# swap meals out of plan
-# prompt user for number of meal to swap 
-# given number replace meal at that index

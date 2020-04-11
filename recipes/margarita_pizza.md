@@ -1,6 +1,7 @@
 # Margarita Pizza
 
 > serves 4 
+
 > (four pizzas)
 
 ## Ingredients 

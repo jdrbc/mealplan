@@ -3,8 +3,11 @@
 [image](./images/moosewood_chili.jpg)
 
 > source: page 176 Moosewood cookbook
+
 > 1 hour & 40 minutes 
+
 > serves 6
+
 > Soak the beans for at least 4 hours (preferably overnight ) before cooking. Prepare all other ingredients while the beans are cooking, To save time.
 
 ## Ingredients

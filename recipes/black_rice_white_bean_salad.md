@@ -3,7 +3,9 @@
 [source](./images/black_rice_white_bean_salad.jpg)
 
 > source: page 97 of build a bowl
+
 > serves 4-6
+
 > 15 minutes
 
 ## Ingredients
