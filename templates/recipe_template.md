@@ -1,7 +1,9 @@
 # {{ recipe.title }}
 
 > source {{ recipe.source }}
+
 > serves {{ recipe.servings }}
+
 > {{ recipe.time }}
 
 ## Ingredients

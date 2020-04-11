@@ -8,7 +8,7 @@
 
 > serves 4
 
-# Ingredients
+## Ingredients
 
 - tahini sauce
     - 1 garlic clove
@@ -39,47 +39,6 @@
     - 1/2 cup olives
     - (optional) parsley
     - (optional) cilantro
-    
- 
-
- 
-
- 
-
- 
-
- 
-
-  
-
-    
-
- 
-
-. 2 fus i , F
-: S, you can} LP T gine and red onion, if using, with the lemon iceanten ALAFEL
-| | ever, made with canned chickpeas anda he hese U , rome Season with salt and Pepper, Olive 3 gar
-E , easiest falafel ever Falinatincene 7 Dap of fr Fangs tO owl. Seas Gatlic cloves ae
-cessor. a pé anfriec ; 85 s rge ; : ;
-TAHINI SA uc nie the food proc The falafel patties are pang, d unt) &sh 5 gargs r bowls. Arrange the falafe| to’ 1 cup jj hy
-lic clove, peeled 5 right in the rved over quinoa with grape tomatoes, Cucum} S0lde, il i” grains into eons er hae ~. tOMatoes, cucumber flat oon Packed fresh
-1 gar " isp and are se d f| er, by] 7 the ot ach bowl. Dr 2 anini Sauce an , | Parsley, p|
-cup well-stirred tanin’ ind a zippy romaine salad. A velvety, dairy-free tahini sz Icg oo Sp? ives Ovo" . kle with a few parsley and/or Cilantro anes Seuoth a) Serving Pears
-; ice olives, and 4 2ZII ® ties olives? inkle 3 seve
-2 tablespoons lemon Julce hing together ; 2 S fj and alad: Sp 7 an tiny Se
-eH 2 ee ske the falafel with either oat or almond flour — eat flou, 0? $ cilantro, plc Tesh |
-Salt eee You can m ae ,|afel patties that are easier to flip, while the mee reat yo! cae Sd
-sup plus 2 tablesp cs slightly aenser tae rumblier in texture. % flay, <
-4 ee re a bit lighter but crumblier x i ; ae cca a
-eo TINE: A Ren en etl ant ee [ ) | 1(
-— = ; ;
-j 40 minutes | COOKING TIME: 10 minutes |
-4 | ———__
-
-|
-~nal \] ,
-—— yMcns
-
   
   
  

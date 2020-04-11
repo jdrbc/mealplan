@@ -16,6 +16,13 @@ class Meal:
     url: str = 'unknown'
     ingredients: List[str] = field(default_factory=list)
 
+def is_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
 @lru_cache(maxsize=None)
 def get_dir_files(dir):
     return [name for name in os.listdir(dir) if os.path.isfile(os.path.join(dir, name))]
@@ -43,11 +50,12 @@ def read_meal(file_name):
                 mode = 'read_ingredient'
                 logger.debug(f'found ingredients section at line {num}')
         elif mode == 'read_ingredient':
-            match = re.search('\s*-?\s*(.*)', line)
-            if match is not None:
-                ingredients.append(match.group(1))
-            else:
+            if line[0] == '#':
                 mode = 'done'
+            else:
+                match = re.search('\s*-\s*(.*)', line)
+                if match is not None:
+                    ingredients.append(match.group(1))
         else:
             break
     logger.debug(f'meal read complete. found {len(ingredients)} ingredients.')
@@ -55,43 +63,47 @@ def read_meal(file_name):
     return Meal(title.title(), url, ingredients)
 
 def print_meals(meals):
-    i = 1
-    for meal in meals:
-        click.echo(f'{i}. {meal.name}')
-        i += 1
-
+    if not meals:
+        click.echo('no meals!')
+    else:
+        i = 1
+        for meal in meals:
+            click.echo(f'{i}. {meal.name}')
+            i += 1
+            
 def print_meal_plan(meals):
-    click.echo('====== MEAL PLAN =======\n')
+    click.echo('\n\n====== MEAL PLAN =======\n')
     print_meals(meals)
     click.echo('\n========================\n')
 
-def replace_meal(meals, meal_num, clear=True):
-    # if clear:
-        # click.clear()
-    click.echo(f'replace: {meals[meal_num-1].name}')
-    meal_options = get_meals(5)
+def replace_meal(meals, meal_num, search=None):
+    if search is None:
+        click.echo(f'\n\nOptions to replace {meals[meal_num-1].name}:')
+    else:
+        click.echo(f'\n\nOptions containing \'{search}\' to replace {meals[meal_num-1].name}:')
+
+    meal_options = get_meals(5) if search is None else get_meals(num=None, search=search)
     print_meals(meal_options)
+    click.echo('--------------')
     click.echo('[Number] => choose meal')
-    click.echo('[Enter] => regenerate')
+    click.echo('[Enter] => regenerate / search')
     resp = click.prompt('', default='regenerate', show_default=False)
-    if resp == 'regenerate':
-        return replace_meal(meals, meal_num)
-    try:
+    if (is_int(resp)):
         resp = int(resp)
         if resp in range(1, len(meal_options) + 1):
             replacment = meal_options[resp-1]
             meals[meal_num - 1] = replacment
             return meals
         else:
-            raise Exception('invalid index')
-    except:
-        # click.clear()
-        click.echo('sorry, didn\'t understand that')
-        return replace_meal(meals, meal_num, clear=False)
+            click.echo('sorry, invalid selection')
+            return replace_meal(meals, meal_num)
+    elif resp == 'regenerate':
+        return replace_meal(meals, meal_num)
+    else:
+        return replace_meal(meals, meal_num, resp)
 
-def confirm_meals(meals, clear=True):
-    # if clear:
-        # click.clear()
+
+def confirm_meals(meals):
     print_meal_plan(meals)
     click.echo('[r] => regenerate')
     click.echo('[Number] => replace meal')
@@ -100,24 +112,28 @@ def confirm_meals(meals, clear=True):
     if resp == 'r':
         return confirm_meals(get_meals(len(meals)))
     elif resp == 'y':
-       return meals
+        return meals
     
-    try:
+    if is_int(resp):
         resp = int(resp)
         if resp in range(1, len(meals) + 1):
             return confirm_meals(replace_meal(meals, resp))
-        else:
-            raise Exception('invalid index')
-    except:
-        # click.clear()
-        click.echo('sorry, didn\'t understand that')
-        return confirm_meals(meals, clear=False)
+    click.echo('sorry, invalid selection')
+    return confirm_meals(meals)
+        
 
-def get_meals(num):
+def get_meals(num=None, search=None):
     recipe_file_names = get_dir_files('recipes')
-    chosen_recipe_file_names = random.sample(recipe_file_names, num)
+
+    if search is not None:
+        terms = search.split(' ')
+        recipe_file_names = filter(lambda file_name: any(elem in file_name.split('_') for elem in terms), recipe_file_names)
+
+    if num is not None:
+        recipe_file_names = random.sample(recipe_file_names, num)
+
     meals = []
-    for name in chosen_recipe_file_names:
+    for name in recipe_file_names:
         meals.append(read_meal(name))
     return meals
 
@@ -153,4 +169,5 @@ def build_plan():
     print_shopping_list(meals)
 
 if __name__ == '__main__':
+    logger.disable(__name__)
     build_plan()
