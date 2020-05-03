@@ -50,7 +50,9 @@ def read_meal(file_name):
                 mode = 'read_ingredient'
                 logger.debug(f'found ingredients section at line {num}')
         elif mode == 'read_ingredient':
-            if line[0] == '#':
+            # figure out if done
+            match = re.search('##\s*(Directions|Instructions)', line, re.IGNORECASE)
+            if match is not None:
                 mode = 'done'
             else:
                 match = re.search('\s*-\s*(.*)', line)
@@ -127,7 +129,7 @@ def get_meals(num=None, search=None):
 
     if search is not None:
         terms = search.split(' ')
-        recipe_file_names = filter(lambda file_name: any(elem in file_name.split('_') for elem in terms), recipe_file_names)
+        recipe_file_names = filter(lambda file_name: any(term in name_part for term in terms for name_part in file_name.split('_')), recipe_file_names)
 
     if num is not None:
         recipe_file_names = random.sample(recipe_file_names, num)
@@ -158,8 +160,10 @@ def print_shopping_list(meals):
 
 @click.command()
 def build_plan():
+    nummeals = int(click.prompt('number of meals', default='3', show_default=True))
+
     # get some meals
-    meals = get_meals(3)
+    meals = get_meals(nummeals)
     meals = confirm_meals(meals)
 
     # print suggested plan
