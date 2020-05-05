@@ -9,13 +9,17 @@
 ## Ingredients 
 
 ### dough
-- 2.5 cups (600 ml) warm water
 - 1 tbsp sugar (15 ml) sugar
 - 1 tsp (5 ml) active dry yeast
 - 2 tbsp (30 ml) olive oil
 - 1 tbsp (15 ml) kosher salt
 - 5 cups (600g) bread flour, plus more for working the dough
 - Cornmeal, semolina flour, or coarse-ground whole wheat flour for dusting
+
+- water:
+  - Italian 00 flour — 1.3 cups (330-360 ml) warm water (55%-60% hydration)
+  - Standard all-purpose white flour — 1.5 cups (390-420 ml) warm water (65%-70% hydration).
+  - High-gluten bread flour — 1.75 cups (420-450 ml) warm water (70%-75% hydration)
 
 ### sauce
 
