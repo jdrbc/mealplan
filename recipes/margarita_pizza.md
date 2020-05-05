@@ -4,54 +4,62 @@
 
 > (four pizzas)
 
+> source: https://www.youtube.com/watch?v=SDpCzJw2xm4
+
 ## Ingredients 
 
 ### dough
-- 600 mL of warm water
-- 7 cups (1kg) flour, type “00” or all purpose
-- 2.5 – 3 tablespoons (25 grams) of fresh yeast or 2 teaspoons (7-8 grams) of dried yeast.
-- 6 tablespoons of extra virgin olive oil
-- 1.5 teaspoons salt
-- 2 teaspoons sugar
+- 2.5 cups (600 ml) warm water
+- 1 tbsp sugar (15 ml) sugar
+- 1 tsp (5 ml) active dry yeast
+- 2 tbsp (30 ml) olive oil
+- 1 tbsp (15 ml) kosher salt
+- 5 cups (600g) bread flour, plus more for working the dough
+- Cornmeal, semolina flour, or coarse-ground whole wheat flour for dusting
 
 ### sauce
-- 1 28-ounce can whole San Marzano tomatoes
-- ¼ cup extra-virgin olive oil
-- 7 garlic cloves
-- pinch crushed red pepper flakes
+
+- 1 28 oz (828 ml) can crushed tomatoes (I like Pastene 'Kitchen Ready')
+- 2-4 tbsp (30-60 ml) olive oil
+- 1/4 tsp (1g) sugar
 - 1 teaspoon kosher salt
-- 1 large fresh basil sprig, or 1/4 teaspoon dried oregano, more to taste 
+
+- (optional) 1/2 tsp (a fraction of a gram, I don't know) dried oregano
+- (optional) 7 garlic cloves
+- (optional) pinch crushed red pepper flakes
+- (optional) 1 large fresh basil sprig
 
 ### toppings
-- 2 balls mozzarella
 - basil
+- 1 tbsp (15 ml) grated parmesan or pecorino cheese
+- 7 ounces (200g) whole-milk, low-moisture mozzarella, freshly grated
 
 ## Instructions
 
 ### dough
 
-1. Sprinkle the yeast into a medium bowl with the warm water. We don’t mean hot, and we don’t mean cold… we mean warm! That’s the kind the yeast likes best. Stir until the yeast dissolves.
-2. Place almost all of the flour on the table in the shape of a volcano. (Think Mt. Vesuvius… appropriate since Naples is the king of all pizza cities!).
-3. Pour the yeast-and-warm-water mix, along with the other ingredients, into the “crater” of the volcano.
-4. Knead everything together for 10 to 15 minutes until the dough is smooth and elastic, keeping your surface floured.
-5. Grease up a bowl with some olive oil and put the dough inside. Turn the dough around so the top is slightly oiled.
-6. Cover the bowl and put the dough aside to let it rest for at least four or five hours.
-7. (optional for those who want their pizza really authentic). Make a cross on top of the dough with a knife. An old Italian tradition, this is seen as a way of “blessing the bread.”
-8. Preheat the oven to about 400°F, or about 200°C.
-9. Dump the dough out of the bowl and back onto the floured surface. Punch it down, getting rid of any bubbles. (Note: Now’s the time to enlist a kid with more energy than they know what to do with!).
-10. Divide the dough in half and let it rest for a few minutes.
-11. Roll each section into a 12-inch disc. Now’s your chance to decide how thick you want your pizza to be! Do you want it pizza alta (Neapolitan-style) or pizza bassa (Roman-style)? Just remember, your crust will puff up a little bit as it’s baked!
-12.  Transfer the dough onto an oiled pizza pan or baking sheet.
-13. Add tomato sauce, if you want a pizza rossa (red pizza). Lots of pizzas in Italy are actually pizza bianca, without tomato sauce, so don’t feel like you have to! Brush the edges of the crust with a little bit of olive oil.
-14. Bake each pizza for about 10 minutes, then add mozzarella cheese (sliced or grated) on top, as well as any other ingredients.
-15. Let the pizzas bake until the crust is browned and the cheese is melted. By lifting up the pizza to peek underneath, you can make sure the bottom has browned, too.
-16. Remove your pizzas from the oven and, for a real Italian touch, garnish with a few basil leaves. And enjoy!
+Start the dough by combining the water, sugar and yeast in a large bowl and let sit for a few minutes. If the yeast goes foamy, it's alive and you're good to proceed (if it doesn't, it's dead and you need new yeast). Add the olive oil and salt and 5 cups (600g) of bread flour. Mix until just combined, then start kneading. Add just enough additional flour to keep the dough workable (i.e. not too sticky) and kneed until you can stretch some of the dough into a thin sheet without it tearing. 
 
-### sauce
+Divide the dough into four equal balls and put them in four containers (ideally glass) and lightly coat the balls and the interior of their containers with olive oil. Cover, and either rise at room temperature for two hours, or put them in the refrigerator and let them rise for 1-7 days. (I prefer the long, cold rise.)
 
-Pour tomatoes into a large bowl and crush with your hands. Pour 1 cup water into can and slosh it around to get tomato juices. Reserve.
-In a large skillet (do not use a deep pot) over medium heat, heat the oil. When it is hot, add garlic.
+When you want to bake, put a pizza stone or pizza steel into your oven (mine works best on a high rack position but every oven is different) and preheat to your highest possible temperature, ideally convection, for a full hour.
 
-As soon as garlic is sizzling (do not let it brown), add the tomatoes, then the reserved tomato water. Add whole chile or red pepper flakes, oregano (if using) and salt. Stir.
+### uncooked sauce option
 
-Place basil sprig, including stem, on the surface (like a flower). Let it wilt, then submerge in sauce. Simmer sauce until thickened and oil on surface is a deep orange, about 15 minutes. (If using oregano, taste sauce after 10 minutes of simmering, adding more salt and oregano as needed.) Discard basil and chile (if using)
+For the sauce, simply mix together the ingredients.
+
+### cooked sauce option
+
+oil in pan unheated, add garlic
+
+when garlic sizzles add crushed can of tomatoes & other toppings (salt, spices)
+
+if you add basil sprig, add whole & allow to wilt in sauce. No need to chop. Remove when ready to eat.
+
+simmer about 15 minutes
+
+### cooking the pizza 
+
+When you want to bake, put a pizza stone or pizza steel into your oven (mine works best on a high rack position but every oven is different) and preheat to your highest possible temperature, ideally convection, for a full hour.
+
+Liberally dust a pizza peel with cornmeal (or something similar). Take the cold dough out of the fridge and dust it in flour. Stretch to the widest size and shape that will fit on your peel and stone/steel. Top with just enough sauce to lightly coat the surface. Dust the sauce layer with parmesan, then cover with the mozzarella. Transfer the pizza to the stone/steel and bake until the crust is well-browned and the cheese has browned a bit (but, ideally, has not started oozing out an orange grease layer), 6-7 minutes.
