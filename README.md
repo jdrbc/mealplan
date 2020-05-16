@@ -9,7 +9,7 @@ The meal planner allows the user to create a meal plan from recipes stored in th
 
 It then creates a markdown file of the meal plan & a shopping list for the chosen meals.
 
-The `import.py` script will prompt you for information about the meal & generate a recipe in the format that the meal planner script expects.
+The `import.py` script will either import from a URL or prompt you for information about the meal & generate a recipe in the format that the meal planner script expects.
 
 ## Installation
 

@@ -1,5 +1,7 @@
 # {{ recipe.title }}
 
+![image]({{ recipe.image_source }})
+
 > source {{ recipe.source }}
 
 > serves {{ recipe.servings }}
