@@ -9,8 +9,6 @@ The meal planner allows the user to create a meal plan from recipes stored in th
 
 It then creates a markdown file of the meal plan & a shopping list for the chosen meals.
 
-Take pictures of recipes from recipe books and store them in recipes/images. Run the `import_from_photo.py` script to automatically generate a recipe from the picture. This requires installing teserract. 
-
 The `import.py` script will prompt you for information about the meal & generate a recipe in the format that the meal planner script expects.
 
 ## Sample usage
