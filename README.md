@@ -11,6 +11,24 @@ It then creates a markdown file of the meal plan & a shopping list for the chose
 
 The `import.py` script will prompt you for information about the meal & generate a recipe in the format that the meal planner script expects.
 
+## Installation
+
+Install pipenv
+
+`pip install pipenv`
+
+Install dependencies
+
+`pipenv install`
+
+Activate pipenv shell
+
+`pipenv shell`
+
+Create a mealplan!
+
+`python mealplan.py`
+
 ## Sample usage
 
 See [sample meal plan](./sample_meal_plan.md) & [sample shopping list](./sample_shopping_list.md).
