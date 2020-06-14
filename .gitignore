@@ -1,6 +1,6 @@
 .*/
 **/images/
 *.pyc
-\#meal_plan.md
+\#meal_plan*.md
 \#shopping_list.md
 .stignore

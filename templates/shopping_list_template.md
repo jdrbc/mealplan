@@ -1,5 +1,5 @@
-{% for meal in meals %}
-{{ meal.name }}{% for ingredient in meal.ingredients %}
+{% for category in categories %}
+# {{ category }}{% for ingredient in category_to_ingredients.get(category) %}
 
 - {{ ingredient }}{% endfor %}
 {% endfor %}

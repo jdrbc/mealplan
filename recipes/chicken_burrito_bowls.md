@@ -18,7 +18,7 @@ guac
 
 lime sour cream
 
-- source cream
+- sour cream
 - lime zest
 - lime juice
 

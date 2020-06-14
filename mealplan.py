@@ -10,6 +10,155 @@ import re
 import click
 from functools import lru_cache
 
+CATEGORY_TO_LONG_INGREDIENTS = {
+    'dairy': [
+    ],
+    'meat': [
+    ],
+    'spices': [
+        'garlic powder',
+        'chili powder',
+        'bay leaves',
+        'bay leaf'
+    ],
+    'sauces and condiments': [
+        'peanut butter'
+    ],
+    'baking': [
+        'lemon juice'
+    ],
+    'veggies': [
+        'green bean',
+        'bok choy',
+        'bell pepper',
+        'fresh basil'
+    ],
+    'canned': [
+        'coconut milk'
+    ],
+    'grains': [
+        'bulgar wheat'
+    ],
+    'misc': [
+        'chili sauce'
+    ]
+}
+
+CATEGORY_TO_INGREDIENTS = {
+    'dairy': [
+        'milk',
+        'egg',
+        'cheese',
+        'butter',
+        'cream',
+        'yogurt',
+        'feta'
+    ],
+    'meat': [
+        'beef',
+        'chicken',
+        'pork',
+        'cod',
+        'fish',
+        'salmon',
+        'sausage',
+        'meat'
+    ],
+    'spices': [
+        'salt',
+        'pepper',
+        'powder',
+        'oregano',
+        'thyme',
+        'cumin',
+        'seasoning',
+        'basil',
+        'cinnamon',
+        'turmeric',
+        'ground'
+    ],
+    'grains': [
+        'rice',
+        'grains',
+        'quinoa',
+        'bulgur'
+    ],
+    'bread and bakery': [
+        'buns',
+        'bread',
+        'sandwich',
+        'wrap'
+    ],
+    'baking': [
+        'flour',
+        'sugar',
+        'honey',
+        'yeast'
+    ],
+    'sauces and condiments': [
+        'mustard',
+        'ketchup',
+        'relish',
+        'salsa',
+        'mayo',
+        'tahini'
+    ],
+    'pasta': [
+        'pasta',
+        'spaghetti'
+    ],
+    'canned': [
+        'bean'
+        'can',
+        'chickpeas'
+    ],
+    'fruit': [
+        'lime',
+        'lemon',
+        'apples',
+        'avocado',
+        'avo',
+    ],
+    'veggies': [
+        'chiles',
+        'shallot'
+        'peas',
+        'parsley',
+        'scallion',
+        'spinach'
+        'lettuce',
+        'corn',
+        'jalapeno',
+        'celery',
+        'carrot',
+        'potato',
+        'squash',
+        'zucchini',
+        'onion',
+        'scallions',
+        'cucumber',
+        'garlic',
+        'ginger',
+        'radishes',
+        'cabbage',
+        'cilantro',
+        'mint',
+        'lemon',
+        'tomato'
+    ]
+}
+
+def flip_dict(key_to_list):
+    ret = {}
+    for key in key_to_list.keys():
+        values = key_to_list[key]
+        for value in values:
+            ret[value] = key
+    return ret
+
+INGREDIENT_TO_CATEGORY = flip_dict(CATEGORY_TO_INGREDIENTS)
+LONG_INGREDIENT_TO_CATEGORY = flip_dict(CATEGORY_TO_LONG_INGREDIENTS)
+
 @dataclass
 class Meal:
     name: str = 'unknown'
@@ -55,7 +204,7 @@ def read_meal(file_name):
             if match is not None:
                 mode = 'done'
             else:
-                match = re.search('\s*-\s*(.*)', line)
+                match = re.search('^\s*-\s*(.*)', line)
                 if match is not None:
                     ingredients.append(match.group(1))
         else:
@@ -150,13 +299,35 @@ def print_plan(meals):
 def print_shopping_list(meals):
     click.echo(f'printing shopping list for {len(meals)} meals')
     
+    ingredients = [ingredient for meal in meals for ingredient in meal.ingredients]
+
+    # sort ingredients into categories
+    category_to_ingredients = {}
+    for ingredient in ingredients:
+        cat = find_ingredient_category(ingredient)
+
+        ingredients_in_cat = category_to_ingredients.get(cat, [])
+        ingredients_in_cat.append(ingredient)
+        category_to_ingredients[cat] = ingredients_in_cat
+
     env = Environment(
         loader=PackageLoader('mealplan', 'templates')
     )
     template = env.get_template('shopping_list_template.md')
 
     f = open('./#shopping_list.md', 'w')
-    f.write(template.render(meals=meals))
+    f.write(template.render(categories=category_to_ingredients.keys(), category_to_ingredients=category_to_ingredients))
+
+def find_ingredient_category(ingredient):
+    ingredient = ingredient.lower()
+    for long_ingredient in LONG_INGREDIENT_TO_CATEGORY.keys():
+        if long_ingredient in ingredient:
+            return LONG_INGREDIENT_TO_CATEGORY[long_ingredient]
+
+    for search_ingredient in INGREDIENT_TO_CATEGORY.keys():
+        if search_ingredient in ingredient:
+            return INGREDIENT_TO_CATEGORY[search_ingredient]
+    return 'misc'
 
 @click.command()
 def build_plan():
