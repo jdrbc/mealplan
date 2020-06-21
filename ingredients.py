@@ -1,7 +1,7 @@
 DAIRY = 'dairy'
 MEAT = 'meat'
 SPICES = 'spices'
-SAUCES = 'sauces and condiments'
+SAUCES = 'sauces/condiments/oil'
 BREAD = 'bread and bakery'
 BAKING = 'baking'
 VEGGIES = 'veggies'
@@ -16,28 +16,36 @@ CATEGORY_TO_LONG_INGREDIENTS = {
         'garlic powder',
         'chili powder',
         'bay leaves',
-        'bay leaf'
+        'bay leaf',
+        'salt and pepper',
+        'black pepper',
+        's & p',
     ],
     SAUCES: [
-        'peanut butter'
+        'peanut butter',
+        'fish sauce',
+        'olive oil',
     ],
     BAKING: [
-        'lemon juice'
+        'bread flour',
+        'lemon juice',
+        'maple syrup',
     ],
     VEGGIES: [
         'green bean',
         'bok choy',
         'bell pepper',
-        'fresh basil'
+        'fresh basil',
     ],
     CANNED: [
-        'coconut milk'
+        'coconut milk',
     ],
     GRAINS: [
-        'bulgar wheat'
+        'bulgar wheat',
     ],
     MISC: [
-        'chili sauce'
+        'chili sauce',
+        'tortilla chips',
     ]
 }
 
@@ -49,7 +57,8 @@ CATEGORY_TO_INGREDIENTS = {
         'butter',
         'cream',
         'yogurt',
-        'feta'
+        'feta',
+        'mozzarella',
     ],
     MEAT: [
         'beef',
@@ -59,7 +68,7 @@ CATEGORY_TO_INGREDIENTS = {
         'fish',
         'salmon',
         'sausage',
-        'meat'
+        'meat',
     ],
     SPICES: [
         'salt',
@@ -72,57 +81,61 @@ CATEGORY_TO_INGREDIENTS = {
         'basil',
         'cinnamon',
         'turmeric',
-        'ground'
+        'ground',
     ],
     GRAINS: [
         'rice',
         'grain',
         'quinoa',
-        'bulgur'
+        'bulgur',
     ],
     BREAD: [
-        'buns',
+        'bun',
         'bread',
         'sandwich',
-        'wrap'
+        'wrap',
     ],
     BAKING: [
         'flour',
         'sugar',
         'honey',
-        'yeast'
+        'yeast',
     ],
     SAUCES: [
         'mustard',
+        'vinaigrette',
         'ketchup',
         'relish',
         'salsa',
         'mayo',
-        'tahini'
+        'tahini',
+        'oil',
+        'sauce',
     ],
     PASTA: [
         'pasta',
-        'spaghetti'
+        'spaghetti',
     ],
     CANNED: [
-        'bean'
+        'bean',
         'can',
-        'chickpeas'
+        'chickpeas',
     ],
     FRUIT: [
         'lime',
         'lemon',
-        'apples',
+        'apple',
         'avocado',
         'avo',
     ],
     VEGGIES: [
+        'greens',
         'chiles',
-        'shallot'
+        'shallot',
         'peas',
         'parsley',
         'scallion',
-        'spinach'
+        'spinach',
         'lettuce',
         'corn',
         'jalapeno',
@@ -132,25 +145,28 @@ CATEGORY_TO_INGREDIENTS = {
         'squash',
         'zucchini',
         'onion',
-        'scallions',
+        'scallion',
         'cucumber',
         'garlic',
         'ginger',
-        'radishes',
+        'radish',
         'cabbage',
         'cilantro',
         'mint',
         'lemon',
-        'tomato'
+        'tomato',
+    ],
+    MISC: [
+        'almond',
+        'peanut',
     ]
 }
 
 def flip_dict(key_to_list):
     ret = {}
-    for key in key_to_list.keys():
-        values = key_to_list[key]
-        for value in values:
-            ret[value] = key
+    for key, items in key_to_list.items():
+        for item in items:
+            ret[item] = key
     return ret
 
 INGREDIENT_TO_CATEGORY = flip_dict(CATEGORY_TO_INGREDIENTS)

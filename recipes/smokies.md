@@ -12,9 +12,9 @@
 - buns
 
 ### toppings
-- relish, 
-- onions, 
-- ketchup, 
+- relish
+- onions 
+- ketchup 
 - mustard
 
 ## Directions

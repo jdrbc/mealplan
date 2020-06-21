@@ -17,7 +17,6 @@ Panfriend Falafel Bowl
 - salt and pepper
 - 2 tablespoons oat or almond flour
 - 6 tablespoons neutral vegetabl oil
-- bowl
 - lettuce
 - 1/2 small red onion
 - 1 tablespoon lemon juice
