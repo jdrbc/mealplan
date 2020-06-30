@@ -69,6 +69,7 @@ CATEGORY_TO_INGREDIENTS = {
         'salmon',
         'sausage',
         'meat',
+        'smokies',
     ],
     SPICES: [
         'salt',

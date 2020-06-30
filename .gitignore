@@ -3,4 +3,5 @@
 *.pyc
 \#meal_plan*.md
 \#shopping_list.md
+\#shopping_list.html
 .stignore

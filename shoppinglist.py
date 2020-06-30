@@ -48,9 +48,9 @@ def print_shopping_list(meals):
     env = Environment(
         loader=PackageLoader('mealplan', 'templates')
     )
-    template = env.get_template('shopping_list_template.md')
+    template = env.get_template('shopping_list_template.html')
 
-    f = open('./#shopping_list.md', 'w')
+    f = open('./#shopping_list.html', 'w')
     f.write(template.render(categories=intersection(LIST_ORDER, category_to_ingredients.keys()), category_to_ingredients=category_to_ingredients))
 
 def intersection(lst1, lst2): 
